@@ -6,6 +6,7 @@ public enum CoursePhase {
 	FINISHED("Course has ended");
 	
 	private String message;
+	
 	private CoursePhase(String message) {
 		this.message=message;
 	}
