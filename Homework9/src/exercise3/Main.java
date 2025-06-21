@@ -37,8 +37,8 @@ public class Main {
 			else
 				return 0;
 		};
+		System.out.println("Results ordered by year and then rating");
 		movieStream.filter(rating85).sorted(year.thenComparing(rating)).forEach(System.out::println);
-		;
 
 	}
 }
