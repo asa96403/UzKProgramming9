@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 public class Main {
 	public static void main(String[] args) {
 		List<Movie> movies = new ArrayList<Movie>();
+		//Erstellen der Liste auch mit List.of() möglich
 		// Bewertungen meist von amazon oder Prime Video
 		movies.add(new Movie("Harry Potter und der Stein der Weisen", 9.6, 2001));
 		movies.add(new Movie("Harry Potter und die Kammer des Schreckens", 7.4, 2002));
@@ -40,5 +41,12 @@ public class Main {
 		System.out.println("Results ordered by year and then rating");
 		movieStream.filter(rating85).sorted(year.thenComparing(rating)).forEach(System.out::println);
 
+		/**
+		 * andere mögliche Lösung (kürzer mit Comperator.comparing())
+		 * 
+		 * movies.stream().filter(m -> m.getRating >= 8.5)
+		 * .sorted ( Comperator.comparing(Movie::getYear).then Comparing(Comperator.comparing(Movie::getRating).reversed()))
+		 * .forEach(System.out::println);
+		 */
 	}
 }
